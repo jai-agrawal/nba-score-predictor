@@ -7,15 +7,13 @@ def find_ci(X_train, X_test, y_train):
 
     lower_model = GradientBoostingRegressor(loss="quantile",
                                             alpha=LOWER_ALPHA)
-    mid_model = GradientBoostingRegressor(loss="ls")
     upper_model = GradientBoostingRegressor(loss="quantile",
                                             alpha=UPPER_ALPHA)
 
     lower_model.fit(X_train, y_train)
-    mid_model.fit(X_train, y_train)
     upper_model.fit(X_train, y_train)
 
-    return lower_model.predict(X_test), mid_model.predict(X_test), upper_model.predict(X_test)
+    return lower_model.predict(X_test), upper_model.predict(X_test)
 
 def return_arrays(lower, upper):
     list = []

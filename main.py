@@ -19,12 +19,15 @@ test_features = scaler.transform(X_test)
 model = LinearRegression()
 model.fit(X_train, y_train)
 
+# predictions for the home-team scores
 y_predicted = [int(i) for i in list(model.predict(X_test).round())]
 
-lower, middle, upper = find_ci(X_train, X_test, y_train)
-arrays = return_arrays(lower,middle)
+# finding confidence intervals
+lower, upper = find_ci(X_train, X_test, y_train)
+arrays = return_arrays(lower,upper)
 
-# # Record actual values on test set
+# recording actual values on test set
 predictions = pd.DataFrame(y_test)
 predictions['prediction'] = y_predicted
 predictions['confidence_intervals'] = arrays
+print(predictions)
