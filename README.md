@@ -15,7 +15,9 @@ home team score, the best fit prediction will conform to home-team scores as wel
 find a range values rather than a single one. For this, we give confidence intervals to our prediction using a Gradient Boosting Regressor. As shown in 
 confidenceIntervals.py's 'find_ci()' function, we find a range of predicted values fo the home-team's final score. The separate range values are then rounded off, 
 converted into tuples and then returned to the main code. Finally, all the findings are added to a 'predictions' dataframe. A sample of the final DataFrame looks like: 
+
 <img width="418" alt="Screenshot 2021-03-26 at 4 49 35 PM" src="https://user-images.githubusercontent.com/77375209/112624177-49694e80-8e53-11eb-9951-45f6a50843d2.png">
+
 All of the machine learning algorithms used in this code have been implemented using sklearn. 
 
 ## Evaluation 
